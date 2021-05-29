@@ -7,7 +7,7 @@ namespace ProiectII
 {
     public partial class LoginForm : Form
     {
-        static public LoginForm Me { get; set; }
+        static public LoginForm Me  { get; set; }
         private Form1 main;
         public LoginForm()
         {
