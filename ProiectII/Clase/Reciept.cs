@@ -30,7 +30,7 @@ namespace ProiectII.Clase
             double total = 0.0;
             foreach(var item in Items)
             {
-                total = item.GetValue();
+                total += item.GetValue();
             }
            
             return total;

@@ -7,14 +7,15 @@ namespace ProiectII
 {
     public partial class LoginForm : Form
     {
+        static public LoginForm Me { get; set; }
         private Form1 main;
         public LoginForm()
         {
             InitializeComponent();
-
+            Me = this;
 
         }
-
+       
         private void btnLogin_Click(object sender, EventArgs e)
         {
             IsInDataBase(txtUsername.Text, txtPassword.Text);
@@ -28,13 +29,14 @@ namespace ProiectII
             dbCon.Server = "localhost";
             dbCon.DatabaseName = "proiectii";
             dbCon.UserName = "root";
-            dbCon.Password = "Qweasdzxc123Halo02";
+            dbCon.Password = "admin";
             if (dbCon.IsConnect())
             {
                 //suppose col0 and col1 are defined as VARCHAR in the DB
                 string query = "SELECT * FROM proiectii.users;";
                 var cmd = new MySqlCommand(query, dbCon.Connection);
                 var reader = cmd.ExecuteReader();
+                bool pp = false;
                 while (reader.Read())
                 {
                     int id = Convert.ToInt32(reader.GetString(0));
@@ -44,12 +46,24 @@ namespace ProiectII
                     if (user.IsEqual(login))
                     {
                         dbCon.Close();
+                        if (main != null)
+                            main.Close();
                         main = new Form1(true);
                         main.Show();
                         this.Hide();
+                        pp = true;
                         return;
+                        
 
                     }
+                }
+                if(pp==false)
+                {
+                    MessageBox.Show("Parola sau User incorect", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtUsername.Text = "";
+                    txtPassword.Text = "";
+
+
                 }
                 dbCon.Close();
             }

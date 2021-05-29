@@ -33,13 +33,15 @@ namespace ProiectII
             this.btnLoadRestaurant = new System.Windows.Forms.Button();
             this.btnAddItems = new System.Windows.Forms.Button();
             this.lstItems = new System.Windows.Forms.ListBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnCloseReciept
             // 
-            this.btnCloseReciept.Location = new System.Drawing.Point(942, 494);
+            this.btnCloseReciept.Location = new System.Drawing.Point(1256, 556);
+            this.btnCloseReciept.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCloseReciept.Name = "btnCloseReciept";
-            this.btnCloseReciept.Size = new System.Drawing.Size(207, 31);
+            this.btnCloseReciept.Size = new System.Drawing.Size(276, 38);
             this.btnCloseReciept.TabIndex = 0;
             this.btnCloseReciept.TabStop = false;
             this.btnCloseReciept.Text = "Close Reciept";
@@ -48,9 +50,10 @@ namespace ProiectII
             // 
             // btnLoadRestaurant
             // 
-            this.btnLoadRestaurant.Location = new System.Drawing.Point(942, 531);
+            this.btnLoadRestaurant.Location = new System.Drawing.Point(1256, 602);
+            this.btnLoadRestaurant.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLoadRestaurant.Name = "btnLoadRestaurant";
-            this.btnLoadRestaurant.Size = new System.Drawing.Size(207, 28);
+            this.btnLoadRestaurant.Size = new System.Drawing.Size(276, 34);
             this.btnLoadRestaurant.TabIndex = 2;
             this.btnLoadRestaurant.Text = "Load Restaurant Data";
             this.btnLoadRestaurant.UseVisualStyleBackColor = true;
@@ -58,9 +61,10 @@ namespace ProiectII
             // 
             // btnAddItems
             // 
-            this.btnAddItems.Location = new System.Drawing.Point(942, 424);
+            this.btnAddItems.Location = new System.Drawing.Point(1256, 512);
+            this.btnAddItems.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAddItems.Name = "btnAddItems";
-            this.btnAddItems.Size = new System.Drawing.Size(207, 29);
+            this.btnAddItems.Size = new System.Drawing.Size(276, 36);
             this.btnAddItems.TabIndex = 5;
             this.btnAddItems.Text = "AddItems";
             this.btnAddItems.UseVisualStyleBackColor = true;
@@ -69,23 +73,38 @@ namespace ProiectII
             // lstItems
             // 
             this.lstItems.FormattingEnabled = true;
-            this.lstItems.Location = new System.Drawing.Point(942, 24);
+            this.lstItems.ItemHeight = 16;
+            this.lstItems.Location = new System.Drawing.Point(1256, 30);
+            this.lstItems.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lstItems.Name = "lstItems";
-            this.lstItems.Size = new System.Drawing.Size(207, 381);
+            this.lstItems.Size = new System.Drawing.Size(275, 468);
             this.lstItems.TabIndex = 6;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(1256, 643);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(276, 34);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Back to Login";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1178, 571);
+            this.ClientSize = new System.Drawing.Size(1571, 703);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lstItems);
             this.Controls.Add(this.btnAddItems);
             this.Controls.Add(this.btnLoadRestaurant);
             this.Controls.Add(this.btnCloseReciept);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
         }
@@ -96,6 +115,7 @@ namespace ProiectII
         private System.Windows.Forms.Button btnLoadRestaurant;
         private System.Windows.Forms.Button btnAddItems;
         private System.Windows.Forms.ListBox lstItems;
+        private System.Windows.Forms.Button button1;
     }
 }
 

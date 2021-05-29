@@ -34,7 +34,7 @@ namespace ProiectII
                 if (dbCon.IsConnect())
                 {
                     //suppose col0 and col1 are defined as VARCHAR in the DB
-                    string query = "INSERT INTO `proiectii`.`reciept`(`Date`,`Value`,`Table`,`Items`)VALUES(\""+DateTime.Now.ToString()+"\","+ totaltavlue .ToString()+",\""+ RestaurantView.FocusTable.Model.Id.ToString()+"\",\""+ RestaurantView.FocusTable.Model.Reciept.ToString()+ "\");";
+                    string query = "INSERT INTO `proiectii`.`reciept`(`OraData`,`Valoare`,`Masa`,`Item`)VALUES(\""+DateTime.Now.ToString()+"\","+ totaltavlue .ToString()+",\""+ RestaurantView.FocusTable.Model.Id.ToString()+"\",\""+ RestaurantView.FocusTable.Model.Reciept.ToString()+ "\");";
                     var cmd = new MySqlCommand(query, dbCon.Connection);
                     var reader = cmd.ExecuteReader();
                     dbCon.Close();
@@ -94,6 +94,9 @@ namespace ProiectII
 
                 }
                 #endregion
+                btnCloseReciept.Show();
+                btnAddItems.Show();
+
             }
 
 
@@ -120,5 +123,57 @@ namespace ProiectII
          
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            
+            string directory = AppDomain.CurrentDomain.BaseDirectory+"\\LaMarcel\\";
+            string selectedFileName = AppDomain.CurrentDomain.BaseDirectory+ "\\LaMarcel\\LaMarcel.json";
+            string restaurant = selectedFileName.Split('\\')[selectedFileName.Split('\\').Length - 1].Split('.')[0];
+            string path = selectedFileName;
+            #region restaurant_pozitii
+            JObject o1 = JObject.Parse(File.ReadAllText(path));
+
+            // read JSON directly from a file
+            using (StreamReader file = File.OpenText(path))
+            using (JsonTextReader reader = new JsonTextReader(file))
+            {
+                JObject restaurant_pozition_json = (JObject)JToken.ReadFrom(reader);
+                int width = Convert.ToInt32(restaurant_pozition_json[restaurant]["Dimensiuni"].ToString().Split(':')[1]);
+                int height = Convert.ToInt32(restaurant_pozition_json[restaurant]["Dimensiuni"].ToString().Split(':')[0]);
+                pnlRestaurant = new RestaurantView(height, width, this.Size, restaurant);
+                this.Controls.Add(pnlRestaurant);
+                var tables = restaurant_pozition_json[restaurant]["Mese"];
+                int i = 1;
+                foreach (var table in tables)
+                {
+                    pnlRestaurant.AddTable(new Table(new TableModel(table, pnlRestaurant.GetXRatio(), pnlRestaurant.GetYRatio(), i++, lstItems)));
+                }
+
+            }
+            #endregion
+            #region meniu_restaurant
+            using (StreamReader file = File.OpenText(directory + "Menu.json"))
+            using (JsonTextReader reader = new JsonTextReader(file))
+            {
+                JObject menu_json = (JObject)JToken.ReadFrom(reader);
+                this.Menu = new Clase.Meniu(directory);
+                foreach (var item in menu_json)
+                {
+                    Item MenuItem = new Item(item.Value);
+                    Menu.AddItem(MenuItem);
+                }
+
+            }
+            #endregion
+            btnCloseReciept.Show();
+            btnAddItems.Show();
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            LoginForm.Me.Show();
+        }
     }
 }

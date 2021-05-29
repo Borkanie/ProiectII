@@ -21,7 +21,7 @@ namespace ProiectII.Restaurant
 
             base.Height = model.Height;
             base.Width = model.Width;
-            Bitmap imagine = new Bitmap("Table.jpg");
+            Bitmap imagine = new Bitmap("Table.png");
             imagine.MakeTransparent();
             imagine.MakeTransparent(Color.White);
             base.Image = Util.ResizeBitmap(imagine, this.Width, this.Height);

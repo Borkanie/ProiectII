@@ -1,5 +1,6 @@
 ﻿using Org.BouncyCastle.Asn1.X509;
 using ProiectII.Resources;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -11,19 +12,25 @@ namespace ProiectII.Restaurant
         private ChairModel model;
         public Chair(ChairModel model) : base()
         {
-            this.model = model;
-            base.Location = new System.Drawing.Point(model.X, model.Y);
-            //base.BackColor = Color.Green;
-            base.Height = model.RatioY.PixelsFromMeters(0.5);
-            base.Width = model.RatioX.PixelsFromMeters(0.5);
-            Bitmap imagine = new Bitmap("Scaun.png");
-            imagine.MakeTransparent();
-            imagine.MakeTransparent(Color.White);
-            base.Image = Util.ResizeBitmap(imagine,this.Width,this.Height);
-            
-            base.Visible = true;
-            this.MouseClick += Chair_MouseClick;
+            try
+            {
+                this.model = model;
+                base.Location = new System.Drawing.Point(model.X, model.Y);
+                //base.BackColor = Color.Green;
+                base.Height = model.RatioY.PixelsFromMeters(0.5);
+                base.Width = model.RatioX.PixelsFromMeters(0.5);
+                Bitmap imagine = new Bitmap("Scaun.png");
+                imagine.MakeTransparent();
+                imagine.MakeTransparent(Color.White);
+                base.Image = Util.ResizeBitmap(imagine, this.Width, this.Height);
 
+                base.Visible = true;
+                this.MouseClick += Chair_MouseClick;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Nu avem acces la Scaun.png because:"+ex.Message);
+            }
         }
 
         private void Chair_MouseClick(object sender, MouseEventArgs e)

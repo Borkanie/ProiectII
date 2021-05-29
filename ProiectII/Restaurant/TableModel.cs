@@ -24,7 +24,7 @@ namespace ProiectII.Restaurant
         {
             this.List = list;
             this.Reciept = new Reciept();
-            this.Reciept.AddItem(new Item() { ID = 0,Name="Bere",Quantity=19,Price=13.2 });
+            //this.Reciept.AddItem(new Item() { ID = 0,Name="Bere",Quantity=19,Price=13.2 });
             this.Id = id;
             this.RatioX = ratioX;
             this.RatioY = ratioY;
