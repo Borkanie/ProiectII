@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ProiectII.LoginForm" Collapsed="true">
+    <Position X="3.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAACAAAAABAACAAAACAEAACIAAAhAAAABAAAQ=</HashCode>
+      <FileName>LoginForm.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="main" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ProiectII.Form1" Collapsed="true">
+    <Position X="6.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACIAACAAAAAAAECAAAACIAEIAAgwBGQAAAAAAAA=</HashCode>
+      <FileName>Form1.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="pnlRestaurant" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ProiectII.AddItemsForms" Collapsed="true">
+    <Position X="3.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIQAAAAACAAYBAQAACAgBACAAAIAAADBFgAAAAEAAA=</HashCode>
+      <FileName>AddItemsForms.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="Menu" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ProiectII.Restaurant.RestaurantView" Collapsed="true">
+    <Position X="8.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BEAAAgAAAAAAACBAAAgAAAAEAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Restaurant\RestaurantView.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="tables" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="ProiectII.Restaurant.Table" Collapsed="true">
+    <Position X="11" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAACAAAgAAAAAAAAAAAAgAAABEAAI=</HashCode>
+      <FileName>Restaurant\Table.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Model" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Field Name="Chairs" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="ProiectII.Restaurant.TableModel" Collapsed="true">
+    <Position X="13.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAgABgAAAAAGAAoAAEAAAAIAACAAAAAAAAAAAAI=</HashCode>
+      <FileName>Restaurant\TableModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Reciept" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ProiectII.Restaurant.Chair" Collapsed="true">
+    <Position X="13.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAACAAAgAAAAAAAAAAAAAAAAAIAAI=</HashCode>
+      <FileName>Restaurant\Chair.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="model" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ProiectII.Restaurant.ChairModel" Collapsed="true">
+    <Position X="17" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAGAAAAAAAAAAAAACAAAAAAAAAAYAA=</HashCode>
+      <FileName>Restaurant\ChairModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProiectII.Clase.Meniu" Collapsed="true">
+    <Position X="6.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAIAAAAAAAAAgAAAAgAEAAAAAAAAIAA=</HashCode>
+      <FileName>Clase\Meniu.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Items" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="ProiectII.Clase.Item" Collapsed="true">
+    <Position X="8.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIQAAgAAEAQAAAAQAAAAAABAAAAAAgAACAAA=</HashCode>
+      <FileName>Clase\Item.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProiectII.Clase.Reciept" Collapsed="true">
+    <Position X="17" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAEAAAAAAAAgAAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>Clase\Reciept.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Items" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="10" />
+</ClassDiagram>
