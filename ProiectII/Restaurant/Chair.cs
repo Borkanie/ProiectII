@@ -17,11 +17,12 @@ namespace ProiectII.Restaurant
                 this.model = model;
                 base.Location = new System.Drawing.Point(model.X, model.Y);
                 //base.BackColor = Color.Green;
-                base.Height = model.RatioY.PixelsFromMeters(0.5);
-                base.Width = model.RatioX.PixelsFromMeters(0.5);
+                base.Height = model.RatioY.PixelsFromMeters(0.3);
+                base.Width = model.RatioX.PixelsFromMeters(0.3);
                 Bitmap imagine = new Bitmap("Scaun.png");
                 imagine.MakeTransparent();
-                imagine.MakeTransparent(Color.White);
+                imagine.MakeTransparent(Color.Black);
+                
                 base.Image = Util.ResizeBitmap(imagine, this.Width, this.Height);
 
                 base.Visible = true;

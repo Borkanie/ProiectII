@@ -38,38 +38,35 @@ namespace ProiectII
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(204, 175);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLogin.BackColor = System.Drawing.Color.Silver;
+            this.btnLogin.Location = new System.Drawing.Point(300, 147);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(145, 38);
+            this.btnLogin.Size = new System.Drawing.Size(109, 31);
             this.btnLogin.TabIndex = 0;
             this.btnLogin.Text = "Login";
-            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(204, 26);
-            this.txtUsername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtUsername.Location = new System.Drawing.Point(180, 26);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(304, 22);
+            this.txtUsername.Size = new System.Drawing.Size(229, 20);
             this.txtUsername.TabIndex = 1;
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(204, 100);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPassword.Location = new System.Drawing.Point(180, 85);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(304, 22);
+            this.txtPassword.Size = new System.Drawing.Size(229, 20);
             this.txtPassword.TabIndex = 2;
             // 
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
             this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername.Location = new System.Drawing.Point(43, 21);
-            this.lblUsername.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblUsername.Location = new System.Drawing.Point(32, 17);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(132, 29);
             this.lblUsername.TabIndex = 3;
@@ -79,8 +76,7 @@ namespace ProiectII
             // 
             this.lblPassword.AutoSize = true;
             this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.Location = new System.Drawing.Point(49, 94);
-            this.lblPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPassword.Location = new System.Drawing.Point(37, 76);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(128, 29);
             this.lblPassword.TabIndex = 4;
@@ -88,18 +84,19 @@ namespace ProiectII
             // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(565, 260);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(498, 211);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblUsername);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.btnLogin);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoginForm";
+            this.Load += new System.EventHandler(this.LoginForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

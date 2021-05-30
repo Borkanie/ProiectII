@@ -80,8 +80,17 @@ namespace ProiectII
 
         private void lstReciept_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.numericUpDown1.Value = OldReciept.Items[lstReciept.SelectedIndex].Quantity;
-        }
+            try
+            {
+
+                this.numericUpDown1.Value = OldReciept.Items[lstReciept.SelectedIndex].Quantity;
+            }
+            catch
+            {
+                MessageBox.Show("Ceva nu a mers bine!");
+            }
+
+            }
 
         private void lstItems_MouseClick(object sender, MouseEventArgs e)
         {
