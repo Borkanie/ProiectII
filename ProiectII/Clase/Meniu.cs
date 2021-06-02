@@ -18,7 +18,7 @@ namespace ProiectII.Clase
         public void AddItem(Item item)
         {
             if (item.Image == null)
-                item.AddImage(this.Path + "//" + item.Name + ".jpg");
+                item.AddImage(this.Path  + item.Name + ".jpg");
             this.Items.Add(item.ID, item);
         }
         public void RemoveItem(Item item)

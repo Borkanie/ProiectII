@@ -30,10 +30,16 @@ namespace ProiectII.Clase
         {
             return this.Name+"  Quantity:"+this.Quantity.ToString()+"   Price:"+this.Price.ToString();
         }
+
         public void AddImage(string path)
         {
-            Image = new Bitmap(path);
-            Image = new Bitmap(Image, Resources.Constants.ItemPicture());
+            try
+            {
+                Image = new Bitmap(path);
+                Image = new Bitmap(Image, Resources.Constants.ItemPicture());
+            }
+            catch (Exception ex)
+            { }
         }
     }
 }
